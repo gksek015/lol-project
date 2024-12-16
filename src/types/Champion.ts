@@ -1,5 +1,6 @@
 // 챔피언 기본 정보 타입 (Champion)
 export interface Champion {
+  key: string;
   id: string; // 챔피언의 고유 ID
   name: string; // 챔피언 이름
   title: string; // 챔피언 타이틀
