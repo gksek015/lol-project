@@ -23,9 +23,9 @@ export default function RootLayout({
             <h1>
               <Link href={'/'}>LOL</Link>
             </h1>
-            <ul className="flex gap-3">
+            <ul className="flex gap-6">
             <li>
-              <Link href={'/campions'}>챔피언 목록</Link>
+              <Link href={'/champions'}>챔피언 목록</Link>
             </li>
             <li>
               <Link href={'/items'}>아이템 목록</Link>

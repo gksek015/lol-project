@@ -1,5 +1,4 @@
 import { ChampionRotation } from "@/types/ChampionRotation";
-import { headers } from "next/headers";
 
 const RIOT_API = "https://kr.api.riotgames.com";
 const RIOT_API_KEY = process.env.RIOT_API_KEY;
