@@ -17,6 +17,5 @@ export async function getChampionRotation(): Promise<ChampionRotation> {
     if(!res.ok) {
         throw new Error("로드실패")
     }
-
     return res.json();
 }
