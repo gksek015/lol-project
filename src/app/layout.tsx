@@ -19,24 +19,46 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="bg-gray-800 text-white py-4 fixed top-0 w-full z-10">
-          <nav className="container mx-auto flex justify-around">
-            <h1>
-              <Link href={'/'}>LOL</Link>
-            </h1>
-            <ul className="flex gap-6">
-            <li>
-              <Link href={'/champions'}>챔피언 목록</Link>
-            </li>
-            <li>
-              <Link href={'/items'}>아이템 목록</Link>
-            </li>
-            <li>
-              <Link href={'/rotation'}>챔피언 로테이션</Link>
-            </li>
-            </ul>
-          </nav>
-        </header>
+      <header className="bg-black text-white py-4 fixed top-0 w-full z-10 shadow-md">
+  <nav className="container mx-auto flex items-center justify-between px-6">
+    <h1 className="text-2xl font-bold tracking-wide">
+      <Link href={'/'}>
+        <span className="hover:text-gray-500 transition-colors duration-300">
+          LOL
+        </span>
+      </Link>
+    </h1>
+
+    {/* 메뉴 */}
+    <ul className="flex gap-8 text-lg">
+      <li>
+        <Link
+          href={'/champions'}
+          className="hover:text-gray-500 transition-colors duration-300"
+        >
+          챔피언 목록
+        </Link>
+      </li>
+      <li>
+        <Link
+          href={'/items'}
+          className="hover:text-gray-500 transition-colors duration-300"
+        >
+          아이템 목록
+        </Link>
+      </li>
+      <li>
+        <Link
+          href={'/rotation'}
+          className="hover:text-gray-500 transition-colors duration-300"
+        >
+          Free Champions
+        </Link>
+      </li>
+    </ul>
+  </nav>
+</header>
+
         <ReactQueryProvider>
         {children}
         </ReactQueryProvider>

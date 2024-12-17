@@ -67,22 +67,25 @@ export default function Page() {
   if (!champions) return <p>데이터가 없습니다.</p>;
 
   return (
-    <div className="pt-20">
-      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
+    <div className="min-h-screen bg-black text-white pt-20 px-6">
+      <h1 className="text-4xl font-extrabold text-center mb-10">
         Free Champion Rotation
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
         {champions.map((champion) => (
           <Link href={`/champions/${champion.id}`} key={champion.id}>
-            <div className="bg-white shadow p-4 rounded justify-center align-center flex flex-col items-center gap-5">
+            <div className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center gap-4 transition-transform transform hover:scale-105">
               <Image
                 src={`https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/${champion.id}.png`}
                 alt={champion.name}
-                width={60}
-                height={60}
+                width={100}
+                height={100}
+                className="rounded-full border-2 border-gray-600"
               />
-              <h3 className="text-center">{champion.name}</h3>
-              <h3 className="text-center">{champion.title}</h3>
+
+              <h3 className="text-lg font-semibold">{champion.name}</h3>
+              <p className="text-sm text-gray-400">{champion.title}</p>
             </div>
           </Link>
         ))}

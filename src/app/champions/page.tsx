@@ -6,15 +6,16 @@ export default async function ChampionPage() {
     const champions = Object.values(championData);
 
     return (
-        <div className="pt-20 flex justify-center align-center flex-col items-center">
-      <h2 className="pb-10 text-xl font-bold justify-center align-center flex">
-        챔피언 목록
-      </h2>
-      <div className="grid grid-cols-4 gap-10">
-        {champions.map((champion) => {
-          return <ChampionCard champion={champion} key={champion.id} />;
-        })}
+      <div className="min-h-screen bg-black text-white flex flex-col items-center pt-20 px-6">
+        <h2 className="text-3xl font-bold pb-10">
+          챔피언 목록
+        </h2>
+  
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 w-full max-w-7xl">
+          {champions.map((champion) => (
+            <ChampionCard champion={champion} key={champion.id} />
+          ))}
+        </div>
       </div>
-    </div>
-    )
+    );
 }
